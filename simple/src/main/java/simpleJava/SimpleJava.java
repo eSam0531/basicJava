@@ -7,11 +7,10 @@
  * Ex - msg = "SOSTOT"--> result: 2
  * 			expected: SOSSOS
  * 			received: SOSTOT
- * 						 x x --> 2 altered chars
+ *
  * 		msg = "SOSSPSSQSSOR --> result: 3
  * 			expected: SOSSOSSOSSOS
  * 			received: SOSSPSSQSSOR
- * 						  x  x   x --> 3 altered chars
  */
 package simpleJava;
 
