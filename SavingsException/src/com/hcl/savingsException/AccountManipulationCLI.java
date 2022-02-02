@@ -44,7 +44,6 @@ public class AccountManipulationCLI {
 						sufficient = true;
 					} catch (InsufficentBalanceException e) {
 						System.out.println(e);
-						System.out.println("Current balance is: " + acct.getBalance());
 						System.out.println("Please enter a different amount.");
 					}
 				}
