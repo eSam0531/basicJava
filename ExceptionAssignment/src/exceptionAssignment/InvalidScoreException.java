@@ -1,7 +1,7 @@
 package exceptionAssignment; 
 
-public class InvalidScore extends Exception {
-	public InvalidScore() {
+public class InvalidScoreException extends Exception {
+	public InvalidScoreException() {
 		System.out.println("User defined Exception thrown");
 	}
 	public String toString() {

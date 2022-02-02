@@ -23,7 +23,7 @@ public class StudentEntry {
 				System.out.println("Score:");
 				int score = keyboard.nextInt();
 				if(score < 0 || score > 100) {
-					throw new InvalidScore();
+					throw new InvalidScoreException();
 				}
 				students.add(new Student(id,name,score));
 				qty--;
@@ -32,7 +32,7 @@ public class StudentEntry {
 		catch (NumberFormatException e) {
 			System.out.println("Exception : "+ e);
 		}
-		catch (InvalidScore e) {
+		catch (InvalidScoreException e) {
 			System.out.println("Exception : "+ e);
 		}
 		finally {
