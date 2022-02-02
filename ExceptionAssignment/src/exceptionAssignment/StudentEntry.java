@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class studentEntry {
+public class StudentEntry {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
