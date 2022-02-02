@@ -1,1 +1,1 @@
-# my first checkin
+# This repo contains basic Java concepts.
