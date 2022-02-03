@@ -15,14 +15,8 @@ public class StringManipulation {
 	public static void main(String[] args) {
 		// part 1:
 		String name = "FirstName_MiddleName_LastName";
-		StringBuffer sb = new StringBuffer();
-		String[] namearr = name.split("_");
-
-		for(String x: namearr) {
-			sb.append(x);
-			sb.append(" ");
-		}
-		System.out.println(sb);
+		String replacename = name.replace("_"," ");
+		System.out.println(replacename);
 		
 		// part 2:
 		String name2 = "FIRSTNAME:MIDDLENAME:LASTNAME";
@@ -41,7 +35,9 @@ public class StringManipulation {
 		}
 		
 		// part 4:
+		StringBuffer sb = new StringBuffer(replacename);
 		String otherData = "qualification";
+		sb.append(" ");
 		sb.append(date + " ");
 		sb.append(otherData);
 		System.out.println(sb);
