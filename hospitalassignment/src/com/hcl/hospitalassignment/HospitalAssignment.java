@@ -40,18 +40,20 @@ public class HospitalAssignment {
 
 		// Doctor sorting:
 		// sort by doctorID uses comparable
-		System.out.println("Sorted by DoctorId:");
+		System.out.println("\nSorted by DoctorId:");
 		Collections.sort(dList);
 		printDoctors(dList);
 		
 		//sort by Doctor Name
-		System.out.println("Sorted by Doctor Name");
+		System.out.println("\nSorted by Doctor Name");
 		DoctorNameCompare doctorNameCompare = new DoctorNameCompare();
+		Collections.sort(dList, doctorNameCompare);
 		printDoctors(dList);
 		
 		// sort by Doctor specialty
-		System.out.println("Sorted by Doctor Specialty:");
+		System.out.println("\nSorted by Doctor Specialty:");
 		SpecialtyCompare specialtycompare = new SpecialtyCompare();
+		Collections.sort(dList, specialtycompare);
 		printDoctors(dList);
 
 	}
