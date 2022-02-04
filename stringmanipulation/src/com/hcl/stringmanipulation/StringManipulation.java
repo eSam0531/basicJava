@@ -15,8 +15,8 @@ public class StringManipulation {
 	public static void main(String[] args) {
 		// part 1:
 		String name = "FirstName_MiddleName_LastName";
-		String replacename = name.replace("_"," ");
-		System.out.println(replacename);
+		name = name.replace("_"," ");
+		System.out.println(name);
 		
 		// part 2:
 		String name2 = "FIRSTNAME:MIDDLENAME:LASTNAME";
@@ -35,7 +35,7 @@ public class StringManipulation {
 		}
 		
 		// part 4:
-		StringBuffer sb = new StringBuffer(replacename);
+		StringBuffer sb = new StringBuffer(name);
 		String otherData = "qualification";
 		sb.append(" ");
 		sb.append(date + " ");
