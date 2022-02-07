@@ -9,6 +9,8 @@ package com.hcl.employeearraylisttask;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class EmployeeArrayListTask {
 
@@ -22,13 +24,23 @@ public class EmployeeArrayListTask {
 		empList.add(new Employee(98354,"Sarah","Houston"));
 		
 		// calls method to print employees to CLI
+		System.out.println("Inital ArrayList:");
 		printEmployees(empList);
+		System.out.println();
 		
 		// removes employee instance at index 1
 		empList.remove(1);
+		empList.add(new Employee(95732,"Katie","Boston"));
 		
 		// calls method to print employees in CLI
+		System.out.println("Modified origianl ArrayList:");
 		printEmployees(empList);
+		System.out.println();
+		
+		// testing with streams and lambdas
+		List<Employee> empListB = empList.stream().filter(emp -> emp.city.equals("Boston")).collect(Collectors.toList());
+		System.out.println("Results of filtered list using Streams:");
+		empListB.forEach((emp) -> System.out.println(emp.toString()));
 
 	}
 	
