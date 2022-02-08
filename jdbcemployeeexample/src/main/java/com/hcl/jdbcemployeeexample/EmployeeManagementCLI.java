@@ -56,16 +56,20 @@ public class EmployeeManagementCLI {
 				// get date of birth
 				System.out.print("Please enter employee date of birth (mm-dd-yyyy): ");
 				String sdob = kb.next();
-				// flag for while loop to format and ensure correct format entry
+				// format dob string to Date
 				Date dob = null;
 				dob = DateFormatter.stringToDate(sdob);	
 				kb.nextLine();
+				// get salary
 				System.out.print("Please enter employee salary: ");
 				int salary = kb.nextInt();
 				kb.nextLine();
+				//get age
 				System.out.println("Please enter employee age: ");
 				int age = kb.nextInt();
+				//create new employee object
 				Employee1 newEmp = new Employee1(empName,dob,salary,age);
+				// insert new employee record to DB
 				JDBCInsertRecord.insertRecord(newEmp);
 				break;
 			case 2:
