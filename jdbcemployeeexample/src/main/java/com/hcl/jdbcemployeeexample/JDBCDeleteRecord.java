@@ -1,20 +1,23 @@
 package com.hcl.jdbcemployeeexample;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class JDBCDeleteRecord {
 	
-	private static final String deletRecordSQL = "delete from users where empID = ?";
+	private static final String deleteRecordSQL = "delete from users where empID = ?";
 	
-	public void deleteRecord() throws SQLException {
+	public void deleteRecord(int empID) throws SQLException {
 		// Establish Connection
 		try(Connection connection = JDBCUtils.getConnection();
-				//create a statement
-				Statement statement = connection.createStatement();){
+			//create a statement
+			PreparedStatement ps = connection.prepareStatement(deleteRecordSQL);){
+			ps.setInt(1,empID);
+			System.out.println(ps);
+			
 			//Execute query
-			statement.execute(deletRecordSQL);
+			ps.executeUpdate();
 			System.out.println("The record has been deleted successfuly.");
 		} catch (SQLException e) {
 			JDBCUtils.printSQLException(e);
