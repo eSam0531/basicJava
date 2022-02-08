@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class JDBCDeleteRecord {
 	
-	private static final String deleteRecordSQL = "delete from users where empID = ?";
+	private static final String deleteRecordSQL = "delete from employees where empID = ?";
 	
-	public void deleteRecord(int empID) throws SQLException {
+	public static void deleteRecord(int empID) throws SQLException {
 		// Establish Connection
 		try(Connection connection = JDBCUtils.getConnection();
 			//create a statement

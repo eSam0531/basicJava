@@ -24,13 +24,13 @@ public class EmployeeManagementCLI {
 	public static void main(String[] args) throws SQLException, ParseException {
 		// scanner to receive input from CLI
 		Scanner kb = new Scanner(System.in);
-		// flag to maintin do-while loop
+		// flag to maintain do-while loop
 		boolean exit = false;
 		//Strings for menu options
 		String opt1 = "1. Create new employee record";
 		String opt2 = "2. Retrieve all employees records";
 		String opt3 = "3. Retrieve an employee record";
-		String opt4 = "4. Update an employee record";
+		String opt4 = "4. Update an employee's salary";
 		String opt5 = "5. Delete an employee record";
 		String opt6 = "6. Quit/Exit";
 		//int to hold user option selection
@@ -92,9 +92,17 @@ public class EmployeeManagementCLI {
 				break;
 			case 4:
 				System.out.println(opt4+":");
+				System.out.print("Please enter the employee ID you would like to update: ");
+				int id = kb.nextInt();
+				System.out.print("\nPlease enter the new salary: ");
+				int sal = kb.nextInt();
+				JDBCUpdateEmpSalary.updateRecord(sal,id);
 				break;
 			case 5:
 				System.out.println(opt5+":");
+				System.out.print("Please enter the employee ID to be deleted:");
+				int i = kb.nextInt();
+				JDBCDeleteRecord.deleteRecord(i);
 				break;
 			case 6:
 				System.out.println("Good-bye");

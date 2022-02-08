@@ -4,17 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class JDBCUpdateEmpName {
+public class JDBCUpdateEmpSalary {
 
-	private static final String updateNameSQL = "update employees set empName = ? where empID = ?;";
+	private static final String updateSalarySQL = "update employees set salary = ? where empID = ?;";
 
-	public void updateRecord(String empName, int empID) throws SQLException {
+	public static void updateRecord(int empSalary, int empID) throws SQLException {
 
 		// Establish connection
 		try (Connection connection = JDBCUtils.getConnection();
 			// create a statement
-			PreparedStatement ps = connection.prepareStatement(updateNameSQL);) {
-			ps.setString(1, empName);
+			PreparedStatement ps = connection.prepareStatement(updateSalarySQL);) {
+			ps.setInt(1, empSalary);
 			ps.setInt(2, empID);
 			
 			//Execute the query

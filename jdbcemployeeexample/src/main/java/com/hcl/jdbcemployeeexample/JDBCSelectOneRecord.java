@@ -27,7 +27,6 @@ public class JDBCSelectOneRecord {
 				emp.setDob(rs.getDate("dob"));
 				emp.setSalary(rs.getInt("salary"));
 				emp.setAge(rs.getInt("age"));
-				System.out.println(emp.toString());
 			}
 		} catch (SQLException e) {
 			JDBCUtils.printSQLException(e);
