@@ -9,11 +9,11 @@ public class JDBCInsertRecord {
 	private static final String insertEmployeeSQL = "INSERT INTO employees"
 			+ " (empID, empName, dob, salary, age) VALUES " + " (?,?,?,?,?);";
 
-	public void insertRecord(Employee emp) throws SQLException {
+	public static void insertRecord(Employee1 emp) throws SQLException {
 		// Establish connection
 		try (Connection connection = JDBCUtils.getConnection();
 				// Create a statement using connection object
-				PreparedStatement ps = connection.prepareStatement(insertEmployeeSQL)) {
+				PreparedStatement ps = connection.prepareStatement(insertEmployeeSQL);) {
 			ps.setInt(1, emp.getEmpID());
 			ps.setString(2, emp.getEmpName());
 			ps.setDate(3, new java.sql.Date(emp.getDob().getTime()));

@@ -10,10 +10,10 @@ import java.util.List;
 public class JDBCSelectAllRecords {
 	private static final String selectAll = "select empID, empName, dob, salary, age from employees";
 
-	public List<Employee> selectAll() throws SQLException {
+	public List<Employee1> selectAll() throws SQLException {
 		// empty Employee object to be returned
-		List<Employee> empList = new ArrayList<>();
-		Employee temp = new Employee();
+		List<Employee1> empList = new ArrayList<>();
+		Employee1 temp = new Employee1();
 		// Establish connection
 		try (Connection connection = JDBCUtils.getConnection();
 				// create statement to be executed

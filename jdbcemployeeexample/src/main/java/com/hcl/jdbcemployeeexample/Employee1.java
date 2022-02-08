@@ -2,8 +2,7 @@ package com.hcl.jdbcemployeeexample;
 
 import java.util.Date;
 
-public class Employee {
-
+public class Employee1 {
 	private static int nextEmpID = 100;
 
 	private int empID;
@@ -12,11 +11,11 @@ public class Employee {
 	private int salary;
 	private int age;
 
-	public Employee() {
+	public Employee1() {
 	}
 
-	public Employee(int empID, String empName, Date dob, int salary, int age) {
-		this.empID = Employee.nextEmpID;
+	public Employee1(String empName, Date dob, int salary, int age) {
+		this.empID = Employee1.nextEmpID;
 		nextEmpID++;
 		this.empName = empName;
 		this.dob = dob;
@@ -94,5 +93,4 @@ public class Employee {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
 }

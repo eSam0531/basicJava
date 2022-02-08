@@ -8,9 +8,9 @@ import java.sql.SQLException;
 public class JDBCSelectOneRecord {
 	private static final String selectOne = "select empID, empName, dob, salary, age from employees where id = ?";
 
-	public Employee selectOne(int i) throws SQLException {
+	public Employee1 selectOne(int i) throws SQLException {
 		//empty Employee object to be returned
-		Employee emp = new Employee();
+		Employee1 emp = new Employee1();
 		// Establish connection
 		try (Connection connection = JDBCUtils.getConnection();
 				// create statement to be executed
