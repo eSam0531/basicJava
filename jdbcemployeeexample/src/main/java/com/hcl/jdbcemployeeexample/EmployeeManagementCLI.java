@@ -2,7 +2,9 @@ package com.hcl.jdbcemployeeexample;
 
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -33,6 +35,8 @@ public class EmployeeManagementCLI {
 		String opt6 = "6. Quit/Exit";
 		//int to hold user option selection
 		int opt = 0;
+		//employee object list if necessary for option 2
+		List<Employee1> empList = new ArrayList<>();
 
 		// Welcome message
 		System.out.println("Welcome to the Employee Management System");
@@ -63,20 +67,28 @@ public class EmployeeManagementCLI {
 				// get salary
 				System.out.print("Please enter employee salary: ");
 				int salary = kb.nextInt();
-				kb.nextLine();
+				//kb.nextLine();
 				//get age
 				System.out.println("Please enter employee age: ");
 				int age = kb.nextInt();
 				//create new employee object
 				Employee1 newEmp = new Employee1(empName,dob,salary,age);
-				// insert new employee record to DB
+				// insert new employee record to database
 				JDBCInsertRecord.insertRecord(newEmp);
 				break;
 			case 2:
 				System.out.println(opt2+":");
+				//gets all employee records from database
+				empList = JDBCSelectAllRecords.selectAll();
+				//foreach loop to print each employee record
+				empList.forEach((emp) -> System.out.println(emp.toString()));
 				break;
 			case 3:
 				System.out.println(opt3+":");
+				System.out.print("Please enter the empID you wish to retrieve: ");
+				int empID = kb.nextInt();
+				//prints employee recored retrieved from database
+				System.out.println(JDBCSelectOneRecord.selectOne(empID).toString());
 				break;
 			case 4:
 				System.out.println(opt4+":");

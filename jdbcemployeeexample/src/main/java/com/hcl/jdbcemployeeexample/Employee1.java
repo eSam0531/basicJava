@@ -3,7 +3,6 @@ package com.hcl.jdbcemployeeexample;
 import java.util.Date;
 
 public class Employee1 {
-	private static int nextEmpID = 100;
 
 	private int empID;
 	private String empName;
@@ -12,11 +11,16 @@ public class Employee1 {
 	private int age;
 
 	public Employee1() {
+		this.empID = 0;
+		this.empName = null;
+		this.dob = null;
+		this.salary = 0;
+		this.age = 0;
+		
 	}
 
 	public Employee1(String empName, Date dob, int salary, int age) {
-		this.empID = Employee1.nextEmpID;
-		nextEmpID++;
+		this.empID = JDBCGetLastEmpID.getLastID()+1;
 		this.empName = empName;
 		this.dob = dob;
 		this.salary = salary;
@@ -92,5 +96,11 @@ public class Employee1 {
 	 */
 	public void setAge(int age) {
 		this.age = age;
+	}
+	
+	public String toString() {
+		return "EmployeeID: " + this.empID + " Employee Name: " + this.empName +
+				" Employee DOB: " + this.dob + " Salary: " + this.salary + 
+				" Age: " + this.age;
 	}
 }

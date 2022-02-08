@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JDBCSelectOneRecord {
-	private static final String selectOne = "select empID, empName, dob, salary, age from employees where id = ?";
+	private static final String selectOne = "select empID, empName, dob, salary, age from employees where empID = ?;";
 
-	public Employee1 selectOne(int i) throws SQLException {
-		//empty Employee object to be returned
+	public static Employee1 selectOne(int i) throws SQLException {
+		// empty Employee object to be returned
 		Employee1 emp = new Employee1();
 		// Establish connection
 		try (Connection connection = JDBCUtils.getConnection();
@@ -19,22 +19,20 @@ public class JDBCSelectOneRecord {
 			System.out.println(ps);
 			// Execute query
 			ResultSet rs = ps.executeQuery();
-			
-			if (rs.next()) {
-				// Process results from query
-				while (rs.next()) {
-					emp.setEmpID(i);
-					emp.setEmpName(rs.getNString("empName"));
-					emp.setDob(rs.getDate("dob"));
-					emp.setSalary(rs.getInt("salary"));
-					emp.setAge(rs.getInt("age"));
-				}
-				return emp;
+
+			// Process results from query
+			while (rs.next()) {
+				emp.setEmpID(rs.getInt("empID"));
+				emp.setEmpName(rs.getNString("empName"));
+				emp.setDob(rs.getDate("dob"));
+				emp.setSalary(rs.getInt("salary"));
+				emp.setAge(rs.getInt("age"));
+				System.out.println(emp.toString());
 			}
 		} catch (SQLException e) {
 			JDBCUtils.printSQLException(e);
 		}
-		
+
 		return emp;
 	}
 }

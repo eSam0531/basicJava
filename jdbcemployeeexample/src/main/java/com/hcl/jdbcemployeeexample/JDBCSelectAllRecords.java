@@ -10,10 +10,10 @@ import java.util.List;
 public class JDBCSelectAllRecords {
 	private static final String selectAll = "select empID, empName, dob, salary, age from employees";
 
-	public List<Employee1> selectAll() throws SQLException {
+	public static List<Employee1> selectAll() throws SQLException {
 		// empty Employee object to be returned
 		List<Employee1> empList = new ArrayList<>();
-		Employee1 temp = new Employee1();
+		
 		// Establish connection
 		try (Connection connection = JDBCUtils.getConnection();
 				// create statement to be executed
@@ -23,6 +23,7 @@ public class JDBCSelectAllRecords {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
+				Employee1 temp = new Employee1();
 				temp.setEmpID(rs.getInt("empID"));
 				temp.setEmpName(rs.getNString("empName"));
 				temp.setDob(rs.getDate("dob"));
