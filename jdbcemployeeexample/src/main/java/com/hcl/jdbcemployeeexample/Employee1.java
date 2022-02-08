@@ -16,11 +16,11 @@ public class Employee1 {
 		this.dob = null;
 		this.salary = 0;
 		this.age = 0;
-		
+
 	}
 
 	public Employee1(String empName, Date dob, int salary, int age) {
-		this.empID = JDBCGetLastEmpID.getLastID()+1;
+		this.empID = JDBCGetLastEmpID.getLastID() + 1;
 		this.empName = empName;
 		this.dob = dob;
 		this.salary = salary;
@@ -33,7 +33,7 @@ public class Employee1 {
 	public int getEmpID() {
 		return empID;
 	}
-	
+
 	/**
 	 * 
 	 * @param empID
@@ -97,10 +97,9 @@ public class Employee1 {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 	public String toString() {
-		return "EmployeeID: " + this.empID + " Employee Name: " + this.empName +
-				" Employee DOB: " + this.dob + " Salary: " + this.salary + 
-				" Age: " + this.age;
+		return "EmployeeID: " + this.empID + " Employee Name: " + this.empName + " Employee DOB: " + this.dob
+				+ " Salary: " + this.salary + " Age: " + this.age;
 	}
 }
