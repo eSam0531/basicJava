@@ -127,6 +127,7 @@ public class EmployeeManagementCLI {
 		Scanner k = new Scanner(System.in);
 		String choices = null;
 		
+		// hashmap used to quickly retrieve strings to append to SQL message
 		HashMap<Integer,String> filters = new HashMap<>();
 		filters.put(1, "salary ");
 		filters.put(2, "empName like ");
@@ -137,21 +138,23 @@ public class EmployeeManagementCLI {
 				"\n1.salary \n2.first letter of employee name" +
 				"\n3.age \nPlease enter digits separated by commas");
 		choices = k.nextLine();
+		//split string entered into cli at ,
 		String[] choiceArr = choices.split(",");
 		int[] intChoice = new int[choiceArr.length];
 		
+		// iterate through choiceArr to convert to int
 		for (int i = 0; i < intChoice.length; i++) {
 			intChoice[i] = Integer.parseInt(choiceArr[i]);
 		}
-		
-		for(int choice : intChoice) {
-			System.out.println(choice);
-		}
-		
+		//used for testing make sure above loop was working
+//		for(int choice : intChoice) {
+//			System.out.println(choice);
+//		}
+		//starting message added to string build to get filter options
 		String message = "select empID, empName, dob, salary, age from employees where ";
 		StringBuilder sb = new StringBuilder(message);
 		
-		
+		//iterate through choices to ask more details and append appropriate string to SQL message
 		for(int i = 0; i<intChoice.length; i++) {
 			if(intChoice[i] == 1) {
 				System.out.println("What salary comparison would you like(<,>,<=,>=,==,!=)?");
@@ -177,9 +180,10 @@ public class EmployeeManagementCLI {
 		}
 		sb.append(";");
 		
+		// convert stringbuilder to string to pass to JDBCFilterRecords
 		String finalmessage = sb.toString();
 		List<Employee1> list = new ArrayList<>();
-		
+		//executes filter query
 		list = JDBCFilterRecords.filterList(finalmessage);
 		
 		return list;
