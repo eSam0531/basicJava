@@ -179,7 +179,7 @@ public class EmployeeManagementCLI {
 			
 		}
 		sb.append(";");
-		
+		k.close();
 		// convert stringbuilder to string to pass to JDBCFilterRecords
 		String finalmessage = sb.toString();
 		List<Employee1> list = new ArrayList<>();

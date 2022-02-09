@@ -19,28 +19,23 @@ public class EmployeeArrayListTask {
 		List<Employee> empList = new ArrayList<>();
 		
 		// adds new Employee objects to ArrayList
-		empList.add(new Employee(94840,"John","Boston"));
-		empList.add(new Employee(34342,"Alexis","Orlando"));
-		empList.add(new Employee(98354,"Sarah","Houston"));
-		
-		// calls method to print employees to CLI
-		System.out.println("Inital ArrayList:");
-		printEmployees(empList);
-		System.out.println();
-		
-		// removes employee instance at index 1
-		empList.remove(1);
-		empList.add(new Employee(95732,"Katie","Boston"));
+		empList.add(new Employee(94840,"John","Boston", 30000, 21));
+		empList.add(new Employee(34342,"Alexis","Orlando", 50000, 27));
+		empList.add(new Employee(98354,"Sarah","Houston", 80000, 30));
+		empList.add(new Employee(95732,"Katie","Boston", 90000, 29));
+		empList.add(new Employee(98765,"Brandon","Tokyo",40000, 24));
+		empList.add(new Employee(69385,"Eric","Tokyo",55000,35));
 		
 		// calls method to print employees in CLI
 		System.out.println("Modified origianl ArrayList:");
 		printEmployees(empList);
 		System.out.println();
 		
-		// testing with streams and lambdas
-		List<Employee> empListB = empList.stream().filter(emp -> emp.city.equals("Boston")).collect(Collectors.toList());
-		System.out.println("Results of filtered list using Streams:");
-		empListB.forEach((emp) -> System.out.println(emp.toString()));
+		// testing with streams
+		List<Employee> empListBoston = empList.stream().filter(emp -> emp.city.equals("Boston")).collect(Collectors.toList());
+		System.out.println("Employees who are located in Boston:");
+		// forEach() method used to print
+		empListBoston.forEach((emp) -> System.out.println(emp.toString()));
 
 	}
 	
