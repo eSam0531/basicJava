@@ -1,12 +1,12 @@
-package com.hcl.employeearraylisttask;
+package com.hcl.java8features.entity;
 
 public class Employee {
 
-	int employeeID;
-	String employeeName;
-	String city;
-	int salary;
-	int age;
+	protected int employeeID;
+	protected String employeeName;
+	protected String city;
+	protected int salary;
+	protected int age;
 
 	// Constructor
 	public Employee(int employeeID, String employeeName, String city, int salary, int age) {

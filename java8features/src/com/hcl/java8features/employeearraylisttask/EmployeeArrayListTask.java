@@ -5,12 +5,14 @@
  * 3.For which scenarios Map should be used.
  * 4.For which scenarios Set should be used.
  */
-package com.hcl.employeearraylisttask;
+package com.hcl.java8features.employeearraylisttask;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+
+import com.hcl.java8features.entity.Employee;
 
 public class EmployeeArrayListTask {
 
@@ -32,7 +34,7 @@ public class EmployeeArrayListTask {
 		System.out.println();
 		
 		// testing with streams
-		List<Employee> empListBoston = empList.stream().filter(emp -> emp.city.equals("Boston")).collect(Collectors.toList());
+		List<Employee> empListBoston = empList.stream().filter(emp -> emp.getCity().equals("Boston")).collect(Collectors.toList());
 		System.out.println("Employees who are located in Boston:");
 		// forEach() method used to print
 		empListBoston.forEach((emp) -> System.out.println(emp.toString()));
