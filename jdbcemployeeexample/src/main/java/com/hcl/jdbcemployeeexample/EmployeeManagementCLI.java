@@ -16,13 +16,6 @@ import java.util.Scanner;
  */
 public class EmployeeManagementCLI {
 
-	/**
-	 * used to print blank lines on screen for readability
-	 */
-	public static void blankLine() {
-		System.out.println();
-	}
-
 	public static void main(String[] args) throws SQLException, ParseException {
 		// scanner to receive input from CLI
 		Scanner kb = new Scanner(System.in);
@@ -40,7 +33,7 @@ public class EmployeeManagementCLI {
 
 		// Welcome message
 		System.out.println("Welcome to the Employee Management System");
-		blankLine();
+		System.out.println();
 
 		do {
 			// options menu
