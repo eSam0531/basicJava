@@ -5,6 +5,12 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>RegistrationandLoginServletJDBC</display-name>
 	<welcome-file-list>
-		<welcome-file>userregister.jsp</welcome-file>
+		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<servlet-mapping>
+	<servlet-name>accessFiles</servlet-name>
+	<url-pattern>/webapp/*</url-pattern>
+	</servlet-mapping>
+
 </web-app>
