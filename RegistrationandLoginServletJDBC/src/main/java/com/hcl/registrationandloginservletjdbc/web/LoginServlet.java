@@ -1,5 +1,5 @@
 package com.hcl.registrationandloginservletjdbc.web;
-
+//login servlet redirects to success message if successful
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -18,15 +18,19 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		// gets data input on page
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
+		// creates user object to hold data input on login page
 		User user = new User();
+		// sets data received from web page
 		user.setUsername(username);
 		user.setPassword(password);
 
 		try {
+			// calls validate message from LoginDao
 			if (LoginDao.validate(user)) {
+				// redirects to loginsuccess page if user is valid
 				resp.sendRedirect("loginsuccess.jsp");
 			} else {
 				HttpSession session = req.getSession();

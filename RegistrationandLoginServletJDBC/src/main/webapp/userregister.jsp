@@ -12,26 +12,32 @@
 		<form action="<%=request.getContextPath()%>/register" method="post">
 			<table style="with: 80%">
 				<tr>
+				<!-- input for first name -->
 					<td>First Name</td>
 					<td><input type="text" name="firstName" /></td>
 				</tr>
 				<tr>
+				<!-- input for last name -->
 					<td>Last Name</td>
 					<td><input type="text" name="lastName" /></td>
 				</tr>
 				<tr>
+				<!-- input for user name -->
 					<td>UserName</td>
 					<td><input type="text" name="username" /></td>
 				</tr>
 				<tr>
+				<!-- input for password -->
 					<td>Password</td>
 					<td><input type="password" name="password" /></td>
 				</tr>
 				<tr>
+				<!-- input for email -->
 					<td>Email</td>
 					<td><input type="text" name="email" /></td>
 				</tr>
 			</table>
+			<!-- submit button -->
 			<input type="submit" value="Submit" />
 		</form>
 	</div>

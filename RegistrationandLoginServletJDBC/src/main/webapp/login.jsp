@@ -13,16 +13,20 @@
 		<form action="<%=request.getContextPath()%>/login" method="post">
 			<table style="with: 100%">
 				<tr>
+				<!-- input for username -->
 					<td>UserName</td>
 					<td><input type="text" name="username" /></td>
 				</tr>
 				<tr>
+				<!-- input for password -->
 					<td>Password</td>
 					<td><input type="password" name="password" /></td>
 				</tr>
 			</table>
+			<!-- submit button -->
 			<input type="submit" value="Submit" />
 			<br>
+			<!-- adds link to register new user page -->
 			<a href="userregister.jsp">Register New User</a>
 		</form>
 	</div>

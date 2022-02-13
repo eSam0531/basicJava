@@ -4,10 +4,7 @@ import java.io.Serializable;
 
 public class User implements Serializable{
 	
-	
-	/**
-	 * 
-	 */
+	//fields
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String fname;
