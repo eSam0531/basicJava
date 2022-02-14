@@ -9,7 +9,6 @@ package com.hcl.java8features.employeearraylisttask;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import com.hcl.java8features.entity.Employee;
