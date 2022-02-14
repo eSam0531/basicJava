@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1 style="color:red"><marquee behavior=alternate>UserName/Password></marquee> </h1>
+<h1 style="color:red"><marquee behavior=alternate>UserName/Password</marquee> </h1>
 <%@ include file="index.jsp" %>
 </body>
 </html>
