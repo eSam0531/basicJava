@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 				// redirects to loginsuccess page if user is valid
 				resp.sendRedirect("loginsuccess.jsp");
 			} else {
-				HttpSession session = req.getSession();
+				resp.sendRedirect("loginfailure.jsp");
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
